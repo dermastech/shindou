@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>神童新堂の振動</title>
+  <script>
+    let img = new Image();
+    img.src = "olympic25_soccer_blue.png";
+  </script>
+</head>
+
+<body onload="timer()">
+  <canvas id="cv3" width="800" height="540"></canvas>
+
+
+
+  <script type="text/javascript">
+    let x_before = 0,
+      y_before = 0;
+    let x_value, y_value, diff, posi = 0,
+      point = 0,
+      time = 0;
+    let boxx = 0,
+      boxy = 0,
+      boxw = 0,
+      boxh = 0,
+      out = 1;
+    <!--
+    var ctx = document.getElementById("cv3").getContext("2d");
+    ctx.fillStyle = "rgba(200,200,200,1)";
+    ctx.fillRect(0, 0, 800, 540)
+    ctx.font = "140px MS明朝";
+    ctx.fillStyle = "rgba(0,0,0,1)";
+    ctx.fillText(point, 0, 530, 500);
+    // 匿名関数内で実行
+    function timer() {
+      time++
+      if (time < 200) {
+        boxx = 50;
+        boxy = 50;
+        boxw = 300;
+        boxh = 200;
+      } 
+      var ctx = document.getElementById("cv3").getContext("2d");
+      ctx.fillStyle = "rgba(200,200,200,1)";
+      ctx.fillRect(0, 0, 800, 540)
+      ctx.drawImage(img, x_value - 85, y_value - 100, 170, 200);
+      ctx.fillStyle = "rgba(250,250,0,0.5)";
+      ctx.fillRect(boxx, boxy, boxw, boxh)
+      ctx.font = "100px MS明朝";
+      ctx.fillStyle = "rgba(0,0,0,1)";
+      ctx.fillText(point, 0, 530, 500);
+      ctx.fillText(Math.round((20 - time / 100)), 670, 530, 500);
+      if (time == 2000) {
+        tweet();
+      }
+      setTimeout('timer()', 10)
+    }
+
+    function tweet() {
+      location.href = "https://twitter.com/intent/tweet?text=神童新堂👦が振動👦三👦" + point + "回振動しました！http://shindou.dermas.trap.show/&hashtags=traP3jam"
+    }
+    (function() {
+
+      function MouseMove00Func(e) {
+        x_before = x_value
+
+        x_value = e.clientX
+        y_value = e.clientY
+
+        if ((x_value > 10 && x_value < 810 && y_value > 10 && y_value < 550)) {
+          if ((x_value > boxx + 10 && x_value < boxx + boxw + 10 && y_value > boxy + 10 && y_value < boxy + boxh + 10)) {
+            out--
+          } else {
+            out = 5
+          }
+        } else {
+          out = 5
+        }
+        if (out < 0)
+          out = 0;
+        diff = x_value - x_before
+        if (diff > 0) {
+          if (posi == -1 && out == 0)
+            point++;
+          posi = 1
+        }
+        if (diff < 0) {
+          if (posi == 1 && out == 0)
+            point++;
+          posi = -1
+        }
+      }
+
+
+      // ------------------------------------------------------------
+      // イベントのリッスンを開始する
+      // ------------------------------------------------------------
+      // イベントリスナーに対応している
+
+      if (document.addEventListener) {
+
+        // マウスを移動するたびに実行されるイベント
+        document.addEventListener("mousemove", MouseMove00Func);
+
+        // アタッチイベントに対応している
+      } else if (document.attachEvent) {
+
+        // マウスを移動するたびに実行されるイベント
+        document.attachEvent("onmousemove", MouseMove00Func);
+
+      }
+
+
+    })();
+    //-->
+  </script>
+  <br>
+  <br>
+  <br> ・遊び方 <br>黄色の四角い枠の中でマウスカーソルを左右に振ろう <br>振りの大きさは得点に関係しないぞ！小刻みに振ろう<br>
+
+</body>
+
+</html>
